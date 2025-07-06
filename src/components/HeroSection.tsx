@@ -1,45 +1,5 @@
 import React, { useRef, useEffect, useState, useMemo } from "react";
 
-// --- TYPES ---
-type Logo = {
-  name: string;
-  group: string;
-  logo: string;
-  logo2d: string;
-};
-
-// --- TOOLKIT LOGOS ---
-const toolkitLogos: Logo[] = [
-  { name: "React", group: "Web", logo: "https://cdn.iconscout.com/3d/premium/thumb/react-9294845-7574163.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
-  { name: "Vue.js", group: "Web", logo: "https://cdn.iconscout.com/3d/premium/thumb/vue-js-9294857-7574175.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" },
-  { name: "Svelte", group: "Web", logo: "https://cdn.iconscout.com/3d/premium/thumb/svelte-9294856-7574174.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/svelte/svelte-original.svg" },
-  { name: "Bootstrap", group: "Web", logo: "https://cdn.iconscout.com/3d/premium/thumb/bootstrap-9294840-7574158.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" },
-  { name: "Next.js", group: "Web", logo: "https://cdn.lordicon.com/3dicons/nextjs.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" },
-  { name: "Angular", group: "Web", logo: "https://cdn.iconscout.com/3d/premium/thumb/angular-9294841-7574159.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" },
-
-  { name: "Node.js", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/nodejs-9294848-7574166.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
-  { name: "Python", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/python-9294852-7574170.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
-  { name: "C++", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/c-plus-plus-9294842-7574160.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
-  { name: "Java", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/java-9294847-7574165.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
-  { name: "Rust", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/rust-9294853-7574171.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" },
-  { name: "Golang", group: "Backend", logo: "https://cdn.iconscout.com/3d/premium/thumb/golang-9294847-7574165.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" },
-  { name: "FastAPI", group: "Backend", logo: "https://cdn.lordicon.com/3dicons/fastapi.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/fastapi/fastapi-original.svg" },
-
-  { name: "AWS", group: "Cloud", logo: "https://cdn.iconscout.com/3d/premium/thumb/aws-9294843-7574161.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original.svg" },
-  { name: "Azure", group: "Cloud", logo: "https://cdn.iconscout.com/3d/premium/thumb/azure-9294842-7574160.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/azure/azure-original.svg" },
-
-  { name: "Docker", group: "DevOps", logo: "https://cdn.iconscout.com/3d/premium/thumb/docker-9294844-7574162.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" },
-  { name: "Kubernetes", group: "DevOps", logo: "https://cdn.iconscout.com/3d/premium/thumb/kubernetes-9294850-7574168.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" },
-  { name: "GitLab", group: "DevOps", logo: "https://cdn.iconscout.com/3d/premium/thumb/gitlab-9294849-7574167.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg" },
-  { name: "Linux", group: "DevOps", logo: "https://cdn.iconscout.com/3d/premium/thumb/linux-9294851-7574169.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" },
-
-  { name: "TensorFlow", group: "ML", logo: "https://cdn.iconscout.com/3d/premium/thumb/tensorflow-9294854-7574172.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg" },
-  { name: "PyTorch", group: "ML", logo: "https://cdn.lordicon.com/3dicons/pytorch.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" },
-
-  { name: "MySQL", group: "Database", logo: "https://cdn.iconscout.com/3d/premium/thumb/mysql-9294850-7574168.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
-  { name: "PostgreSQL", group: "Database", logo: "https://cdn.iconscout.com/3d/premium/thumb/postgresql-9294846-7574164.png", logo2d: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
-];
-
 // --- STAR HOOK ---
 function useStars(count: number = 120) {
   return useMemo(
@@ -56,149 +16,97 @@ function useStars(count: number = 120) {
   );
 }
 
-// --- DUAL SLIDING CARD ---
-type DualSlidingCardProps = {
-  leftItems: Logo[];
-  rightItems: Logo[];
-  speed?: number;
-};
-
-function DualSlidingCardHorizontal({
-  leftItems,
-  rightItems,
-  speed = 0.35,
-}: DualSlidingCardProps) {
-  const leftRef = useRef<HTMLDivElement>(null);
-  const rightRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const leftShow = [...leftItems, ...leftItems];
-  const rightShow = [...rightItems, ...rightItems];
-
-  useEffect(() => {
-    let frame: number;
-    let last = performance.now();
-    const step = (now: number) => {
-      if (leftRef.current && !isPaused) {
-        const el = leftRef.current;
-        const max = el.scrollHeight / 2;
-        const delta = (now - last) * speed;
-        el.scrollTop += delta;
-        if (el.scrollTop >= max) el.scrollTop = 0;
-      }
-      last = now;
-      frame = requestAnimationFrame(step);
-    };
-    frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
-  }, [leftItems, isPaused, speed]);
-
-  useEffect(() => {
-    let frame: number;
-    let last = performance.now();
-    const step = (now: number) => {
-      if (rightRef.current && !isPaused) {
-        const el = rightRef.current;
-        const max = el.scrollHeight / 2;
-        const delta = (now - last) * speed;
-        el.scrollTop -= delta;
-        if (el.scrollTop <= 0) el.scrollTop = max;
-      }
-      last = now;
-      frame = requestAnimationFrame(step);
-    };
-    frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
-  }, [rightItems, isPaused, speed]);
+export function AnimatedToolkits() {
+  const toolkits = [
+    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-cyan-400' },
+    { name: 'Node.js', icon: '🟢', color: 'from-green-400 to-emerald-400' },
+    { name: 'Python', icon: '🐍', color: 'from-yellow-400 to-orange-400' },
+    { name: 'TypeScript', icon: '📘', color: 'from-blue-500 to-indigo-500' },
+    { name: 'Docker', icon: '🐳', color: 'from-blue-400 to-blue-600' },
+    { name: 'AWS', icon: '☁️', color: 'from-orange-400 to-red-400' },
+    { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-600 to-purple-600' },
+    { name: 'MongoDB', icon: '🍃', color: 'from-green-500 to-teal-500' },
+    { name: 'GraphQL', icon: '📊', color: 'from-pink-400 to-purple-500' },
+    { name: 'Kubernetes', icon: '⚙️', color: 'from-blue-500 to-cyan-500' },
+    { name: 'TensorFlow', icon: '🧠', color: 'from-orange-500 to-yellow-500' },
+    { name: 'Git', icon: '📝', color: 'from-red-400 to-pink-400' }
+  ];
 
   return (
-    <div
-      className="relative bg-gradient-to-br from-[#1a223f] via-[#1e1439] to-[#2a0a2a]
-        rounded-3xl shadow-2xl border-4 border-cyan-500/30
-        w-full max-w-4xl h-96 flex overflow-hidden ring-4 ring-cyan-400/10
-        hover:ring-purple-500/20 transition-all duration-700"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="relative w-1/2 h-full overflow-hidden border-r-2 border-cyan-700/30">
-        <div ref={leftRef} className="absolute inset-0 overflow-hidden">
-          <div className="flex flex-col gap-4 py-4 px-3">
-            {leftShow.map((logo, idx) => (
-              <div
-                key={`${logo.name}-left-${idx}`}
-                className="flex items-center gap-3 px-3 py-2 bg-gradient-to-br
-                  from-cyan-900/60 via-gray-900 to-black rounded-xl border
-                  border-cyan-800/30 hover:scale-105 transition-transform duration-200"
-              >
-                <img
-                  src={logo.logo}
-                  alt={logo.name}
-                  className="w-10 h-10 object-contain drop-shadow-lg"
-                />
-                <img
-                  src={logo.logo2d}
-                  alt={`${logo.name}-2d`}
-                  className="w-8 h-8 object-contain bg-white/5 rounded"
-                />
-                <div>
-                  <div className="text-base font-semibold text-cyan-100">{logo.name}</div>
-                  <div className="text-xs uppercase text-cyan-400">{logo.group}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+    <div className="relative h-96 overflow-hidden rounded-2xl w-full max-w-2xl mx-auto">
+      {/* First column - moving up */}
+      <div className="absolute left-0 w-1/3 h-full">
+        <div className="animate-[slideUp_20s_linear_infinite] flex flex-col gap-4 py-4">
+          {[...toolkits, ...toolkits].map((toolkit, index) => (
+            <div
+              key={`col1-${index}`}
+              className={`bg-gradient-to-r ${toolkit.color} p-4 rounded-xl text-white text-center mx-2 min-h-[80px] flex flex-col items-center justify-center shadow-lg`}
+            >
+              <div className="text-2xl mb-1">{toolkit.icon}</div>
+              <div className="text-sm font-semibold">{toolkit.name}</div>
+            </div>
+          ))}
         </div>
       </div>
-      <div className="relative w-1/2 h-full overflow-hidden">
-        <div ref={rightRef} className="absolute inset-0 overflow-hidden">
-          <div className="flex flex-col gap-4 py-4 px-3">
-            {rightShow.map((logo, idx) => (
-              <div
-                key={`${logo.name}-right-${idx}`}
-                className="flex items-center gap-3 px-3 py-2 bg-gradient-to-br
-                  from-purple-900/60 via-gray-900 to-black rounded-xl border
-                  border-purple-800/30 hover:scale-105 transition-transform duration-200"
-              >
-                <img
-                  src={logo.logo}
-                  alt={logo.name}
-                  className="w-10 h-10 object-contain drop-shadow-lg"
-                />
-                <img
-                  src={logo.logo2d}
-                  alt={`${logo.name}-2d`}
-                  className="w-8 h-8 object-contain bg-white/5 rounded"
-                />
-                <div>
-                  <div className="text-base font-semibold text-purple-100">{logo.name}</div>
-                  <div className="text-xs uppercase text-purple-400">{logo.group}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+
+      {/* Second column - moving down */}
+      <div className="absolute left-1/3 w-1/3 h-full">
+        <div className="animate-[slideDown_25s_linear_infinite] flex flex-col gap-4 py-4">
+          {[...toolkits.slice(4), ...toolkits.slice(4), ...toolkits.slice(4)].map((toolkit, index) => (
+            <div
+              key={`col2-${index}`}
+              className={`bg-gradient-to-r ${toolkit.color} p-4 rounded-xl text-white text-center mx-2 min-h-[80px] flex flex-col items-center justify-center shadow-lg`}
+            >
+              <div className="text-2xl mb-1">{toolkit.icon}</div>
+              <div className="text-sm font-semibold">{toolkit.name}</div>
+            </div>
+          ))}
         </div>
       </div>
+
+      {/* Third column - moving up */}
+      <div className="absolute right-0 w-1/3 h-full">
+        <div className="animate-[slideUp_30s_linear_infinite] flex flex-col gap-4 py-4">
+          {[...toolkits.slice(8), ...toolkits.slice(8), ...toolkits.slice(8)].map((toolkit, index) => (
+            <div
+              key={`col3-${index}`}
+              className={`bg-gradient-to-r ${toolkit.color} p-4 rounded-xl text-white text-center mx-2 min-h-[80px] flex flex-col items-center justify-center shadow-lg`}
+            >
+              <div className="text-2xl mb-1">{toolkit.icon}</div>
+              <div className="text-sm font-semibold">{toolkit.name}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Gradient overlays for smooth fade effect */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-transparent pointer-events-none z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-transparent pointer-events-none z-10" />
+
+
+      {/* Custom keyframes for sliding */}
+      <style>{`
+        @keyframes slideUp {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); }
+        }
+        @keyframes slideDown {
+          0% { transform: translateY(-50%); }
+          100% { transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }
 
-// --- HERO SECTION COMPONENT ---
+
+// --- HERO SECTION ---
 export default function HeroSection() {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const [activeGroup, setActiveGroup] = useState("All");
   const fullText = "Full-Stack Dev | ML Innovator | UI Astronaut";
   const heroRef = useRef<HTMLDivElement>(null);
   const stars = useStars(120);
-
-  const filtered = useMemo(() => {
-    if (activeGroup === "All") return toolkitLogos;
-    return toolkitLogos.filter((l) => l.group === activeGroup);
-  }, [activeGroup]);
-
-  const halfway = Math.ceil(filtered.length / 2);
-  const leftLogos = filtered.slice(0, halfway);
-  const rightLogos = filtered.slice(halfway);
 
   useEffect(() => {
     let idx = 0;
@@ -211,7 +119,7 @@ export default function HeroSection() {
       }
     }, 65);
     return () => clearInterval(t);
-  }, []);
+  }, [fullText]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -256,6 +164,13 @@ export default function HeroSection() {
         ))}
       </div>
 
+      {/* Cosmic Glows */}
+      <div className="absolute z-0 pointer-events-none">
+        <div className="absolute left-[30%] top-[10%] w-[32rem] h-[32rem] bg-purple-900 opacity-20 rounded-full blur-3xl" />
+        <div className="absolute right-[15%] bottom-[10%] w-[24rem] h-[24rem] bg-blue-900 opacity-20 rounded-full blur-2xl" />
+        <div className="absolute left-[60%] bottom-[20%] w-[20rem] h-[20rem] bg-pink-900 opacity-20 rounded-full blur-2xl" />
+      </div>
+
       <div ref={heroRef} className="relative z-10 max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-start">
         {/* Left Pane */}
         <div className="space-y-8">
@@ -269,6 +184,10 @@ export default function HeroSection() {
               |
             </span>
           </p>
+          <div className="flex items-center space-x-3 animate-slide-in-right">
+            <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-pulse" />
+            <p className="text-lg text-gray-300"> Trichy, India</p>
+          </div>
           <p className="text-base text-gray-300 leading-relaxed max-w-lg">
             I build immersive, intelligent web systems using React, Golang, PostgreSQL, and Python.
             From cosmic interfaces to machine learning galaxies — I orbit around creativity and impact.
@@ -281,12 +200,28 @@ export default function HeroSection() {
               Let's Collaborate
             </button>
           </div>
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-6 pt-8 animate-fade-in" style={{ animationDelay: '1s' }}>
+            {[
+              { label: 'Production Projects', value: '10+' },
+              { label: 'Tech Stack Depth', value: '20+' },
+              { label: 'Space UI Missions', value: '∞' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center group hover:scale-110 transition-transform duration-300">
+                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2 animate-pulse">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Right Pane: Filters + Sliding Cards */}
-        <div className="space-y-6">
-          {/* 🧭 Just a Heading */}
-          <div className="text-center mb-6 select-none">
+        {/* Right Pane: Animated Toolkits Card */}
+        <div className="space-y-6 flex flex-col items-center justify-center">
+          <div className="text-center mb-4 select-none">
             <h3 className="text-xl font-semibold text-cyan-300 tracking-wide">
               Toolkit Universe
             </h3>
@@ -294,26 +229,19 @@ export default function HeroSection() {
               Infinite cosmic scroll of tech skills :)
             </p>
           </div>
-
-          {/* 🚀 Dual Sliding Toolkit Cards (always moving) */}
-          <DualSlidingCardHorizontal
-            leftItems={leftLogos}
-            rightItems={rightLogos}
-            speed={0.15} // slower speed
-          />
+          <AnimatedToolkits />
         </div>
       </div>
 
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-8 h-12 border-2 border-cyan-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
-          </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-8 h-12 border-2 border-cyan-400 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-cyan-400 rounded-full mt-2 animate-pulse" />
         </div>
+      </div>
 
-        {/* Twinkle Keyframes */}
-        <style>{`
+      {/* Twinkle Keyframes */}
+      <style>{`
         @keyframes starTwinkle {
           0% { opacity: 0.7; transform: scale(1); }
           50% { opacity: 1; transform: scale(1.2); }
