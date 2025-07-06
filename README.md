@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
+🚀 Portfolio website for developers
+A visually stunning, cosmic-themed developer portfolio that blends 3D/2D tech stacks, animated hero sections, and a jaw-dropping dual sliding gallery.
+Built for developers who want to wow visitors and showcase their skills with style.
 
-## Project info
+✨ Features
+Cosmic Hero Section:
 
-**URL**: https://lovable.dev/projects/d0c150bc-74d1-4191-98ef-add2f10e68b0
+Animated name, typing effect, location badge, and cosmic intro
 
-## How can I edit this code?
+Responsive, bold, and modern layout
 
-There are several ways of editing your application.
+Parallax Star & Glow Background:
 
-**Use Lovable**
+Animated, layered stars and glowing nebulae for a deep-space vibe
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d0c150bc-74d1-4191-98ef-add2f10e68b0) and start prompting.
+Dual Sliding Tech Gallery:
 
-Changes made via Lovable will be committed automatically to this repo.
+Massive glassy card with two columns:
 
-**Use your preferred IDE**
+Left slides upward, right slides downward
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Each card shows both 3D and 2D logos, name, and group
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Infinite, auto-sliding, pausable on hover
 
-Follow these steps:
+Neon glows, cosmic fades, and responsive design
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Cosmic Call-to-Action Buttons:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Gradient, animated, and interactive
 
-# Step 3: Install the necessary dependencies.
-npm i
+Stats & Badges:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Animated project/stack stats, location badge, and more
+
+TypeScript + React + Tailwind CSS:
+
+Fully type-safe, modern, and maintainable codebase
+
+🌌 Demo
+![image](https://github.com/user-attachments/assets/ce4dd7cc-56e3-401a-ad61-8768667dd329)
+
+Demo video soon
+
+🚦 Quick Start
+Clone the repo:
+
+bash
+git clone https://github.com/Dhanas3kar/Portfolio-website-for-developers.git
+cd Portfolio-website-for-developers
+Install dependencies:
+
+bash
+npm install
+# or
+yarn install
+Start the dev server:
+
+bash
 npm run dev
-```
+# or
+yarn dev
+Open your browser:
+Visit http://localhost:3000
 
-**Edit a file directly in GitHub**
+🛠️ Customization
+Add/Edit Logos:
+Edit the leftLogos and rightLogos arrays in HeroSection.tsx to showcase your favorite stacks and tools.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Text & Branding:
+Update your name, location, and intro in the hero section.
 
-**Use GitHub Codespaces**
+Colors & Animations:
+Tweak Tailwind classes and background gradients for your own cosmic signature.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+📦 Tech Stack
+React
+TypeScript
+Tailwind CSS
+3D/2D Logos (IconScout, Lordicon, Devicon)
 
-## What technologies are used for this project?
+Inspired by cosmic UI, space missions, and the beauty of modern web tech.
 
-This project is built with:
+📄 License
+MIT
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d0c150bc-74d1-4191-98ef-add2f10e68b0) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+✨ Credits
+3D/2D icons: IconScout, Lordicon, Devicon
+Cosmic gradients: uiGradients
