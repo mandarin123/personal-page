@@ -1,4 +1,5 @@
 🚀 Portfolio website for developers
+
 A visually stunning, cosmic-themed developer portfolio that blends 3D/2D tech stacks, animated hero sections, and a jaw-dropping dual sliding gallery.
 Built for developers who want to wow visitors and showcase their skills with style.
 
@@ -47,18 +48,24 @@ Clone the repo:
 
 bash
 git clone https://github.com/Dhanas3kar/Portfolio-website-for-developers.git
+
 cd Portfolio-website-for-developers
+
 Install dependencies:
 
 bash
 npm install
+
 # or
+
 yarn install
 Start the dev server:
 
 bash
 npm run dev
+
 # or
+
 yarn dev
 Open your browser:
 Visit http://localhost:3000
@@ -68,15 +75,21 @@ Add/Edit Logos:
 Edit the leftLogos and rightLogos arrays in HeroSection.tsx to showcase your favorite stacks and tools.
 
 Text & Branding:
+
 Update your name, location, and intro in the hero section.
 
 Colors & Animations:
+
 Tweak Tailwind classes and background gradients for your own cosmic signature.
 
 📦 Tech Stack
+
 React
+
 TypeScript
+
 Tailwind CSS
+
 3D/2D Logos (IconScout, Lordicon, Devicon)
 
 Inspired by cosmic UI, space missions, and the beauty of modern web tech.
@@ -86,4 +99,5 @@ MIT
 
 ✨ Credits
 3D/2D icons: IconScout, Lordicon, Devicon
+
 Cosmic gradients: uiGradients
