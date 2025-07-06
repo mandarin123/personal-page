@@ -30,15 +30,14 @@ export function ContactSection() {
   const stars = useStars(120);
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'zian.surani@gmail.com', href: 'mailto:zian.surani@gmail.com', color: 'bg-blue-700' },
-    { icon: MapPin, label: 'Location', value: 'Ahmedabad, Gujarat, India', href: '#', color: 'bg-purple-700' },
+    { icon: Mail, label: 'Email', value: 'dhanasekarmurgesan@gmail.com', href: 'mailto:dhanasekarmurgesan@gmail.com', color: 'bg-blue-700' },
+    { icon: MapPin, label: 'Location', value: 'Trichy, India', href: '#', color: 'bg-purple-700' },
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: '#', label: 'Email' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/Dhanas3kar', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/dhanasekar-murugesan-a9321731a/', label: 'LinkedIn' },
+
   ];
 
   const handleChange = (e) => {
