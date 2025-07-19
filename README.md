@@ -39,7 +39,8 @@ TypeScript + React + Tailwind CSS:
 Fully type-safe, modern, and maintainable codebase
 
 🌌 Demo
-![image](https://github.com/user-attachments/assets/ce4dd7cc-56e3-401a-ad61-8768667dd329)
+![image]![image](https://github.com/user-attachments/assets/066bb4a7-6371-45be-a3aa-9b39f1410e42)
+
 
 Demo video soon
 
