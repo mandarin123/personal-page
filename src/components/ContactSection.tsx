@@ -48,20 +48,42 @@ export function ContactSection() {
     setError('');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setSubmitted(false);
+  
     if (!formState.name || !formState.email || !formState.message) {
       setError('Please fill in all fields.');
       return;
     }
+  
     setLoading(true);
-    setTimeout(() => {
+  
+    try {
+      const res = await fetch('https://formspree.io/f/mpwllozl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message
+        })
+      });
+  
+      if (res.ok) {
+        setSubmitted(true);
+        setFormState({ name: '', email: '', message: '' });
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Failed to send. Check your connection.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-      setFormState({ name: '', email: '', message: '' });
-    }, 1500);
+    }
   };
 
   return (
