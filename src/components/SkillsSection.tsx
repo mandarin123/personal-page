@@ -22,27 +22,30 @@ export function SkillsSection() {
       title: "Frontend",
       skills: [
         { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Three.js/WebGL", level: 85 },
-        { name: "Tailwind CSS", level: 92 },
-      ],
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 82 },
-        { name: "GraphQL", level: 78 },
+        { name: "TypeScript", level: 92 },
+        { name: "Zustand/Redux (+Saga)", level: 90 },
+        { name: "Tailwind CSS", level: 90 },
+        { name: "Styled Components", level: 88 },
+        { name: "Vue/Vuetify", level: 80 },
       ],
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git/GitHub", level: 92 },
-        { name: "Docker", level: 85 },
-        { name: "AWS", level: 80 },
-        { name: "Figma", level: 75 },
+        { name: "Git/GitHub", level: 95 },
+        { name: "Webpack/Vite", level: 88 },
+        { name: "Figma", level: 82 },
+        { name: "Jira & Agile", level: 80 },
+      ],
+    },
+    {
+      title: "Core Concepts",
+      skills: [
+        { name: "Component Architecture", level: 95 },
+        { name: "Responsive Design", level: 92 },
+        { name: "API Integration", level: 90 },
+        { name: "Accessibility (a11y)", level: 85 },
+        { name: "Testing (Jest, RTL)", level: 85 },
       ],
     },
   ];
@@ -64,26 +67,19 @@ export function SkillsSection() {
 
   const experience = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
+      title: "Lead Frontend Developer",
+      company: "LatinAd",
+      period: "Feb 2025 – Present",
       description:
-        "Leading development of complex web applications using React and Three.js",
+        "Lead the architecture and front-end development of a digital advertising platform (PORTAL) across LATAM. Managed a team of 4 developers, implemented scalable solutions with React, Redux, and Styled Components, and improved development velocity by 30%.",
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
+      title: "Frontend Developer",
+      company: "Infobibliotecas",
+      period: "Apr 2020 – Jun 2025",
       description:
-        "Built scalable web applications and APIs for various client projects",
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Studios",
-      period: "2019 - 2020",
-      description:
-        "Contributed to multiple projects focusing on modern web technologies",
-    },
+        "Delivered production-ready UIs across multiple projects including Clonia (AI chatbot), Dioxas (subscription content app), Morxes (data analytics dashboard), and 8½ (multimedia e-commerce). Utilized React, TypeScript, Zustand, Tailwind CSS, and Vue.js to build responsive, modular, and performant interfaces.",
+    }
   ];
 
   return (
@@ -125,6 +121,10 @@ export function SkillsSection() {
         <div className="absolute right-[15%] bottom-[10%] w-72 h-72 bg-blue-900 opacity-10 rounded-full blur-2xl" />
         <div className="absolute left-[60%] bottom-[20%] w-60 h-60 bg-pink-900 opacity-10 rounded-full blur-2xl" />
       </div>
+
+      {/* Gradient overlays for smooth transitions */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
       {/* Content */}
       <div
         ref={sectionRef}
@@ -136,7 +136,7 @@ export function SkillsSection() {
             Internships & Experience
           </h2>
           <p className="text-gray-400 text-lg">
-            Technical skills and professional experience across various domains
+            Robust technical skills and hands-on experience building performant, scalable front-end architectures across diverse digital platforms.
           </p>
         </div>
         {/* Skills Grid */}

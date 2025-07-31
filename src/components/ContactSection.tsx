@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, Twitter, Target } from 'lucide-react';
 
 // Generate random stars once
 function useStars(count = 120) {
@@ -30,13 +30,13 @@ export function ContactSection() {
   const stars = useStars(120);
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'dhanasekarmurgesan@gmail.com', href: 'mailto:dhanasekarmurgesan@gmail.com', color: 'bg-blue-700' },
-    { icon: MapPin, label: 'Location', value: 'Trichy, India', href: '#', color: 'bg-purple-700' },
+    { icon: Mail, label: 'Email', value: 'martin.g.abel.d@gmail.com', href: 'mailto:martin.g.abel.d@gmail.com', color: 'bg-blue-700', target: '' },
+    { icon: MapPin, label: 'Location', value: 'Mendoza, Argentina', href: 'https://share.google/HTCLyEKqaJt2xGhCb', color: 'bg-purple-700', target: '_blank' },
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/Dhanas3kar', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/dhanasekar-murugesan-a9321731a/', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/mandarin123', label: 'GitHub', target: '_blank' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/martinabel1987/', label: 'LinkedIn', target: '_blank' },
 
   ];
 
@@ -104,13 +104,18 @@ export function ContactSection() {
         <div className="absolute right-[15%] bottom-[10%] w-72 h-72 bg-blue-900 opacity-30 rounded-full blur-2xl" />
         <div className="absolute left-[60%] bottom-[20%] w-60 h-60 bg-pink-900 opacity-20 rounded-full blur-2xl" />
       </div>
+
+      {/* Gradient overlays for smooth transitions */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl px-4 md:px-8 flex flex-col items-center">
         <h1 className="text-center text-4xl md:text-5xl font-bold text-blue-200 mb-3 tracking-wide" style={{ fontFamily: 'monospace' }}>
-          Let's Connect
+          📬 Let's Connect
         </h1>
         <p className="text-center text-blue-100/80 text-lg mb-12 max-w-2xl">
-          Ready to collaborate on AI, research and innovation? Let's discuss how we can build the future together.
+          Open to exciting remote opportunities, freelance collaborations, or just a good tech conversation.
+          Let's build clean, performant, and impactful front-end experiences together.
         </p>
         <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
           {/* Left Card */}
@@ -125,6 +130,7 @@ export function ContactSection() {
                 href={item.href}
                 className="flex items-center gap-4 mb-4 group"
                 tabIndex={0}
+                target={item.target}
               >
                 <div className={`w-12 h-12 ${item.color} bg-opacity-80 rounded-lg flex items-center justify-center`}>
                   <item.icon className="w-6 h-6 text-white" />
@@ -144,6 +150,7 @@ export function ContactSection() {
                     href={social.href}
                     aria-label={social.label}
                     className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-500/30 transition-colors"
+                    target={social.target}
                   >
                     <social.icon className="w-5 h-5 text-blue-200 group-hover:text-white transition" />
                   </a>

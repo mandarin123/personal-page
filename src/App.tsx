@@ -3,7 +3,6 @@ import { Navigation } from "./components/Navigation";
 import  HeroSection  from "./components/HeroSection";
 import { AboutSection } from "./components/AboutSection";
 import { SkillsSection } from "./components/SkillsSection";
-import { ProjectsSection } from "./components/ProjectsSection";
 import { ContactSection } from "./components/ContactSection";
 
 const SECTIONS = ["home", "about", "skills", "projects", "contact"];
@@ -56,10 +55,6 @@ export default function App() {
 
         <section id="skills" className="min-h-screen" aria-label="Skills">
           <SkillsSection />
-        </section>
-
-        <section id="projects" className="min-h-screen" aria-label="Projects">
-          <ProjectsSection />
         </section>
 
         <section id="contact" className="min-h-screen" aria-label="Contact">

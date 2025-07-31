@@ -4,7 +4,6 @@ import { SpaceScene } from '@/components/SpaceScene';
 import { Navigation } from '@/components/Navigation';
 import { HeroSection } from '@/components/HeroSection';
 import { AboutSection } from '@/components/AboutSection';
-import { ProjectsSection } from '@/components/ProjectsSection';
 import { SkillsSection } from '@/components/SkillsSection';
 import { ContactSection } from '@/components/ContactSection';
 
@@ -56,10 +55,6 @@ const Index = () => {
         
         <div id="about" className="min-h-screen flex items-center">
           <AboutSection />
-        </div>
-        
-        <div id="projects" className="min-h-screen flex items-center">
-          <ProjectsSection />
         </div>
         
         <div id="skills" className="min-h-screen flex items-center">

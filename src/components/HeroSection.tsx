@@ -18,25 +18,40 @@ function useStars(count: number = 120) {
 
 export function AnimatedToolkits() {
   const toolkits = [
-    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-cyan-400' },
-    { name: 'Node.js', icon: '🟢', color: 'from-green-400 to-emerald-400' },
-    { name: 'Python', icon: '🐍', color: 'from-yellow-400 to-orange-400' },
+    { name: 'JavaScript', icon: '🟨', color: 'from-yellow-300 to-yellow-500' },
     { name: 'TypeScript', icon: '📘', color: 'from-blue-500 to-indigo-500' },
-    { name: 'Docker', icon: '🐳', color: 'from-blue-400 to-blue-600' },
-    { name: 'AWS', icon: '☁️', color: 'from-orange-400 to-red-400' },
-    { name: 'PostgreSQL', icon: '🐘', color: 'from-blue-600 to-purple-600' },
-    { name: 'MongoDB', icon: '🍃', color: 'from-green-500 to-teal-500' },
-    { name: 'GraphQL', icon: '📊', color: 'from-pink-400 to-purple-500' },
-    { name: 'Kubernetes', icon: '⚙️', color: 'from-blue-500 to-cyan-500' },
-    { name: 'TensorFlow', icon: '🧠', color: 'from-orange-500 to-yellow-500' },
-    { name: 'Git', icon: '📝', color: 'from-red-400 to-pink-400' }
+    { name: 'HTML5', icon: '📄', color: 'from-orange-400 to-orange-600' },
+    { name: 'CSS3/SASS', icon: '🎨', color: 'from-blue-400 to-purple-500' },
+    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-cyan-400' },
+    { name: 'Next.js', icon: '⚫', color: 'from-gray-700 to-gray-900' },
+    { name: 'Redux', icon: '🌀', color: 'from-purple-500 to-indigo-500' },
+    { name: 'Redux-Saga', icon: '📜', color: 'from-purple-400 to-pink-400' },
+    { name: 'Zustand', icon: '🐻', color: 'from-orange-400 to-amber-500' },
+    { name: 'Vue', icon: '🌿', color: 'from-green-400 to-emerald-500' },
+    { name: 'Vuetify', icon: '🎛️', color: 'from-indigo-400 to-purple-600' },
+    { name: 'Styled Components', icon: '💅', color: 'from-pink-400 to-pink-600' },
+    { name: 'Tailwind CSS', icon: '💨', color: 'from-sky-400 to-blue-500' },
+    { name: 'React Bootstrap', icon: '🧱', color: 'from-indigo-300 to-indigo-600' },
+    { name: 'Git', icon: '📝', color: 'from-red-400 to-pink-400' },
+    { name: 'GitHub', icon: '🐙', color: 'from-gray-600 to-black' },
+    { name: 'Vite', icon: '⚡', color: 'from-yellow-400 to-purple-500' },
+    { name: 'Webpack', icon: '📦', color: 'from-blue-400 to-gray-500' },
+    { name: 'Figma', icon: '🎨', color: 'from-pink-500 to-purple-600' },
+    { name: 'CI/CD', icon: '🚀', color: 'from-green-400 to-teal-500' },
+    { name: 'Agile', icon: '📈', color: 'from-cyan-400 to-blue-500' },
+    { name: 'Jira', icon: '🧩', color: 'from-indigo-400 to-blue-500' },
+    { name: 'Component Architecture', icon: '🏗️', color: 'from-yellow-400 to-orange-400' },
+    { name: 'Responsive Design', icon: '📱', color: 'from-blue-400 to-teal-400' },
+    { name: 'API Integration', icon: '🔌', color: 'from-green-500 to-blue-500' },
+    { name: 'Accessibility (a11y)', icon: '♿', color: 'from-gray-400 to-gray-600' },
+    { name: 'Testing (Jest, RTL)', icon: '🧪', color: 'from-pink-400 to-purple-500' }
   ];
 
   return (
     <div className="relative h-96 overflow-hidden rounded-2xl w-full max-w-2xl mx-auto">
       {/* First column - moving up */}
       <div className="absolute left-0 w-1/3 h-full">
-        <div className="animate-[slideUp_20s_linear_infinite] flex flex-col gap-4 py-4">
+        <div className="animate-[slideUp_80s_linear_infinite] flex flex-col gap-4 py-4">
           {[...toolkits, ...toolkits].map((toolkit, index) => (
             <div
               key={`col1-${index}`}
@@ -51,7 +66,7 @@ export function AnimatedToolkits() {
 
       {/* Second column - moving down */}
       <div className="absolute left-1/3 w-1/3 h-full">
-        <div className="animate-[slideDown_25s_linear_infinite] flex flex-col gap-4 py-4">
+        <div className="animate-[slideDown_80s_linear_infinite] flex flex-col gap-4 py-4">
           {[...toolkits.slice(4), ...toolkits.slice(4), ...toolkits.slice(4)].map((toolkit, index) => (
             <div
               key={`col2-${index}`}
@@ -66,7 +81,7 @@ export function AnimatedToolkits() {
 
       {/* Third column - moving up */}
       <div className="absolute right-0 w-1/3 h-full">
-        <div className="animate-[slideUp_30s_linear_infinite] flex flex-col gap-4 py-4">
+        <div className="animate-[slideUp_80s_linear_infinite] flex flex-col gap-4 py-4">
           {[...toolkits.slice(8), ...toolkits.slice(8), ...toolkits.slice(8)].map((toolkit, index) => (
             <div
               key={`col3-${index}`}
@@ -104,9 +119,9 @@ export function AnimatedToolkits() {
 export default function HeroSection() {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Full-Stack Dev | ML Innovator | UI Astronaut";
+  const fullText = "Senior Front-end Developer\nReact & TypeScript Specialist";
   const heroRef = useRef<HTMLDivElement>(null);
-  const stars = useStars(120);
+  const stars = useStars(450);
 
   useEffect(() => {
     let idx = 0;
@@ -171,35 +186,48 @@ export default function HeroSection() {
         <div className="absolute left-[60%] bottom-[20%] w-[20rem] h-[20rem] bg-pink-900 opacity-20 rounded-full blur-2xl" />
       </div>
 
+      {/* Gradient overlays for smooth transitions */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+
       <div ref={heroRef} className="relative z-10 max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-start">
         {/* Left Pane */}
         <div className="space-y-8">
           <h5 className="text-4xl md:text-5xl font-bold text-white">Hi, I'm</h5>
           <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
-            Dhanasekar
+            Martin Abel
           </h1>
-          <p className="text-xl text-cyan-300 font-light tracking-wider">
-            {text}
-            <span className={`text-cyan-400 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}>
-              |
-            </span>
-          </p>
+          <div className="text-xl text-cyan-300 font-light tracking-wider">
+            {text.split('\n').map((line, index) => (
+              <p key={index} className={index === 0 ? "" : "mt-1"}>
+                {line}
+                {index === text.split('\n').length - 1 && (
+                  <span className={`text-cyan-400 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}>
+                    |
+                  </span>
+                )}
+              </p>
+            ))}
+          </div>
           <div className="flex items-center space-x-3 animate-slide-in-right">
             <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-500 rounded-full animate-pulse" />
-            <p className="text-lg text-gray-300"> Trichy, India</p>
+            <p className="text-lg text-gray-300"> Mendoza, Argentina</p>
           </div>
           <p className="text-base text-gray-300 leading-relaxed max-w-lg">
-            I build immersive, intelligent web systems using React, Golang, PostgreSQL, and Python.
-            From cosmic interfaces to machine learning galaxies — I orbit around creativity and impact.
+            Results-oriented Front-end Developer with over 4 years of experience building fast, scalable, 
+            and maintainable user interfaces. Highly skilled in modern frameworks such as React, Next.js, 
+            and state management tools like Redux and Zustand. Proven ability to lead front-end teams, optimize performance, 
+            and deliver high-quality code across responsive platforms. Self-taught, passionate about continuous learning, and 
+            committed to transforming complex problems into elegant UI solutions.
           </p>
-          <div className="flex gap-4">
+         {/*  <div className="flex gap-4">
             <button className="bg-gradient-to-r from-cyan-500 to-purple-500 px-6 py-3 text-white rounded-lg hover:scale-105 transition-transform">
               View My Galaxy
             </button>
             <button className="border border-cyan-400 px-6 py-3 text-cyan-300 rounded-lg hover:bg-cyan-500/10 transition-all">
               Let's Collaborate
             </button>
-          </div>
+          </div> */}
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 pt-8 animate-fade-in" style={{ animationDelay: '1s' }}>
             {[
@@ -223,10 +251,10 @@ export default function HeroSection() {
         <div className="space-y-6 flex flex-col items-center justify-center">
           <div className="text-center mb-4 select-none">
             <h3 className="text-xl font-semibold text-cyan-300 tracking-wide">
-              Toolkit Universe
+              My Tech Stack
             </h3>
             <p className="text-gray-400 text-sm mt-2">
-              Infinite cosmic scroll of tech skills :)
+              A space-time continuum of tech skills...
             </p>
           </div>
           <AnimatedToolkits />

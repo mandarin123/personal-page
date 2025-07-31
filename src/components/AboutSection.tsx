@@ -5,36 +5,60 @@ export function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { label: 'Years Experience', value: '5+', icon: '🚀' },
-    { label: 'Galactic Projects', value: '50+', icon: '🌌' },
+    { label: 'Years Experience', value: '4+', icon: '🚀' },
+    { label: 'Projects Delivered', value: '10+', icon: '🌌' },
     { label: 'Technologies', value: '25+', icon: '⚡' },
-    { label: 'Happy Clients', value: '30+', icon: '✨' },
+    { label: 'Happy Clients', value: '10+', icon: '✨' },
   ];
 
   const expertise = [
     {
-      icon: '💻',
-      title: 'Full Stack Developer',
-      description: 'Building end-to-end web applications with modern frameworks and databases',
+      icon: '🧠',
+      title: 'Front-End Development',
+      description: 'Crafting responsive, pixel-perfect interfaces with clean, modular code using React, Next.js, and modern CSS frameworks',
       gradient: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: '☁️',
-      title: 'Cloud Support',
-      description: 'Deploying and managing scalable applications on cloud platforms',
+      icon: '🎨',
+      title: 'UI Integration & Styling',
+      description: 'Translating Figma and design systems into flexible, scalable, and accessible UIs using Tailwind, Styled Components, and SASS',
       gradient: 'from-purple-500 to-pink-500'
     },
     {
       icon: '⚙️',
-      title: 'DevOps',
-      description: 'Streamlining development workflows with CI/CD and infrastructure automation',
+      title: 'Performance & Optimization',
+      description: 'Improving app performance, accessibility, and maintainability through smart rendering strategies and optimized state management',
       gradient: 'from-green-500 to-teal-500'
     },
     {
-      icon: '🤖',
-      title: 'ML',
-      description: 'Implementing machine learning solutions and AI-powered applications',
+      icon: '🤝',
+      title: 'Team Collaboration',
+      description: 'Working closely with backend teams, designers, and product managers to ship high-quality features on time in agile environments',
       gradient: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: '📦',
+      title: 'Component Architecture',
+      description: 'Designing scalable, reusable, and maintainable UI components with state isolation and clear separation of concerns in React apps',
+      gradient: 'from-yellow-500 to-amber-500'
+    },
+    {
+      icon: '🛰️',
+      title: 'Real-World Projects',
+      description: 'Delivering robust front-end solutions in production environments, from AI-powered chat platforms to media streaming and e-commerce',
+      gradient: 'from-indigo-500 to-violet-500'
+    },
+    {
+      icon: '🧪',
+      title: 'Testing & Reliability',
+      description: 'Building confidence through unit and integration testing using Jest and React Testing Library for stable, scalable codebases',
+      gradient: 'from-pink-500 to-rose-500'
+    },
+    {
+      icon: '🚀',
+      title: 'Rapid Prototyping',
+      description: 'Transforming ideas into functional interfaces quickly using modern toolchains like Vite, Tailwind, and component-driven development',
+      gradient: 'from-cyan-600 to-blue-600'
     }
   ];
 
@@ -54,7 +78,7 @@ export function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 min-h-screen relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
@@ -71,17 +95,21 @@ export function AboutSection() {
         ))}
       </div>
 
+      {/* Gradient overlays for smooth transitions */}
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Enhanced Section Header */}
         <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'animate-fade-in' : 'opacity-0 translate-y-10'}`}>
           <div className="relative inline-block">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Core <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">Expertise</span>
+            🌌 Core <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">Expertise</span>
             </h2>
             <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-purple-500/20 blur-xl animate-pulse" />
           </div>
           <p className="text-gray-300 text-base max-w-3xl mx-auto leading-relaxed">
-            Specialized in creating digital experiences that push the boundaries of space technology
+            Creating seamless, performant, and user-focused digital experiences through modern front-end technologies
           </p>
         </div>
         
