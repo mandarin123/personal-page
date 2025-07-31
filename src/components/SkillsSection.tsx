@@ -67,19 +67,19 @@ export function SkillsSection() {
 
   const experience = [
     {
+      title: "Frontend Developer",
+      company: "Infobibliotecas",
+      period: "Apr 2022 – Jun 2025",
+      description:
+        "Delivered production-ready UIs across multiple projects including Clonia (AI chatbot), Dioxas (subscription content app), Morxes (data analytics dashboard), and 8½ (multimedia e-commerce). Utilized React, TypeScript, Zustand, Tailwind CSS, and Vue.js to build responsive, modular, and performant interfaces.",
+    },
+    {
       title: "Lead Frontend Developer",
       company: "LatinAd",
       period: "Feb 2025 – Present",
       description:
         "Lead the architecture and front-end development of a digital advertising platform (PORTAL) across LATAM. Managed a team of 4 developers, implemented scalable solutions with React, Redux, and Styled Components, and improved development velocity by 30%.",
     },
-    {
-      title: "Frontend Developer",
-      company: "Infobibliotecas",
-      period: "Apr 2020 – Jun 2025",
-      description:
-        "Delivered production-ready UIs across multiple projects including Clonia (AI chatbot), Dioxas (subscription content app), Morxes (data analytics dashboard), and 8½ (multimedia e-commerce). Utilized React, TypeScript, Zustand, Tailwind CSS, and Vue.js to build responsive, modular, and performant interfaces.",
-    }
   ];
 
   return (
