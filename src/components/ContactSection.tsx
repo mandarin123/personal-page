@@ -128,11 +128,11 @@ export function ContactSection() {
       </div>
 
       {/* Gradient overlays for smooth transitions */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute top-0 left-0 right-0 h-12 bg-gradient-to-b from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#090a1a] via-[#090a1a]/70 to-transparent pointer-events-none z-20" />
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl px-4 md:px-8 flex flex-col items-center">
-        <h1 className="text-center text-4xl md:text-5xl font-bold text-blue-200 mb-3 tracking-wide" style={{ fontFamily: 'monospace' }}>
+        <h1 className="text-center text-4xl md:text-5xl font-bold text-blue-200 mb-3 tracking-wide mt-20" style={{ fontFamily: 'monospace' }}>
           📬 Let's Connect
         </h1>
         <p className="text-center text-blue-100/80 text-lg mb-12 max-w-2xl">

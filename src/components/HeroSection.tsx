@@ -119,7 +119,7 @@ export function AnimatedToolkits() {
 export default function HeroSection() {
   const [text, setText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Senior Front-end Developer\nReact & TypeScript Specialist";
+  const fullText = "Ssr Front-end Developer\nReact & TypeScript Specialist";
   const heroRef = useRef<HTMLDivElement>(null);
   const stars = useStars(450);
 
